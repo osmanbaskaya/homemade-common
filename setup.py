@@ -33,8 +33,8 @@ reqs = parse_requirements()
 print(reqs)
 
 setup(
-    name="PROJECTNAME",
-    version="VERSION",
+    name="homemade-common",
+    version="0.0.1",
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     package_dir={"": "."},
     install_requires=reqs["core"],
