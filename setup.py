@@ -31,12 +31,20 @@ def parse_requirements():
 
 reqs = parse_requirements()
 print(reqs)
+print(
+    find_packages(
+        exclude=["tests.*", "tests"], include=["homemade_common", "homemade_common.*"]
+    )
+)
 
 setup(
-    name="homemade-common",
-    version="0.0.1",
-    packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
-    package_dir={"": "."},
+    name="homemade_common",
+    version="0.0.2",
+    description="Homemade common libraries.",
+    author="Osman Baskaya",
+    packages=find_packages(
+        exclude=["tests.*", "tests"], include=["homemade_common", "homemade_common.*"]
+    ),
     install_requires=reqs["core"],
     package_data={"": ["*.yaml"]},
     include_package_data=True,
